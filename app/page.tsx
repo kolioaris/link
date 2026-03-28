@@ -2,17 +2,23 @@ import { Button } from "@/components/ui/button"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+    <div className="m-5">
+      <div>
+        <h1 className="text-center text-4xl font-bold">
+          kolioaris.xyz Linking
+        </h1>
+        <p className="mt-2 text-center text-muted-foreground">
+          Press the button below to link your Discord account with your GitHub
+          account.
+        </p>
+      </div>
+      <div className="mt-7.5 flex justify-center">
+        <a
+          href="https://link-api.kolioaris.xyz/auth/discord"
+          className="h-12 w-1/2 text-xl"
+        >
+          <Button className="h-12 w-full text-xl">Start Linking</Button>
+        </a>
       </div>
     </div>
   )
