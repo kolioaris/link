@@ -7,7 +7,6 @@ This is the repository of the https://link.kolioaris.xyz website.
 This gives the `Contributor` role once someone has contributed in one of my (@kolioaris) repositories. You can use it to give a specific role in your Discord server when someone has contributed in your repositories.
 
 ## How to set this up yourself
-**THE TUTORIAL IS INCOMPLETE!!**
 ### Create a KV Worker
 This will be used to save linked users and to give the user the Contributor role even after linking.
 
@@ -382,6 +381,36 @@ async function handleGithubCallback(request, env) {
 Open a terminal and write
 `npm install -g wrangler`. Once wrangler is installed, write `wrangler login` in your terminal. You need to login to your Cloudflare account. After that, type `wrangler deploy`.
 
+### Discord Bot Setup
+Create a [Discord Application](https://discord.com/developers/applications). 
+
+From **General Information**, copy **pplication ID**.
+
+From **OAuth2**, copy **Client ID** and **Client Secret**.
+
+In the installation tab, set Install **Link** to **None**. In **OAuth2**, set **Redirects** to `https://[worker-domain]/auth/discord/callback` *(replace [worker-domain] with your worker's domain)*. In **OAuth2 URL Generator** *(in the OAuth2 tab)*, click **bot** *(in the scopes)* and in the **Bot Permissions**, select **Administrator** or **Manage Roles**.
+
+Now, go to your worker's settings and create the following **Variables and Secrets**:
+```
+DISCORD_BOT_TOKEN
+DISCORD_CLIENT_ID
+DISCORD_CLIENT_SECRET
+```
+And fill them with the according information you collected from above. Make sure you set the **Type** to **Secret**.
+
+## GitHub OAuth App Setup
+First, go to [Github OAuth Apps](https://github.com/settings/developers) and click **New OAuth App**.
+
+Then, put whatever you want in the Application name, put **your worker's website link** in **Homepage URL** and put `https://[worker-link].kolioaris.xyz/auth/github/callback` in **Authorization callback URL** *(replace [worker-link] with your worker's website link)*.
+
+When the app is created, copy the Client ID, generate a new client secret and then copy the client secret.
+
+Now, go to your worker's settings and create the following **Variables and Secrets**:
+```
+GITHUB_CLIENT_ID
+GITHUB_CLIENT_SECRET
+```
+And fill them with the according information you collected from above. Make sure you set the **Type** to **Secret**.
 
 
 ## Report Issues
