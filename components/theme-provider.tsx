@@ -33,7 +33,7 @@ function isTypingTarget(target: EventTarget | null) {
     target.tagName === "SELECT"
   )
 }
-
+// easter egg: toggle theme with d
 function ThemeHotkey() {
   const { resolvedTheme, setTheme } = useTheme()
 

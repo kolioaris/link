@@ -7,6 +7,7 @@ This is the repository of the https://link.kolioaris.xyz website.
 This gives the `Contributor` role once someone has contributed in one of my (@kolioaris) repositories. You can use it to give a specific role in your Discord server when someone has contributed in your repositories.
 
 ## How to set this up yourself
+**THE TUTORIAL IS INCOMPLETE!!**
 ### Create a KV Worker
 This will be used to save linked users and to give the user the Contributor role even after linking.
 
@@ -379,7 +380,9 @@ async function handleGithubCallback(request, env) {
 
 ### Deploy the worker
 Open a terminal and write
-`npm install -g wrangler`. Once wrangler is installed, write `wrangler login` in your terminal. You need to login to your Cloudflare account. After that, type `wrangler deploy`. Now, you are done!
+`npm install -g wrangler`. Once wrangler is installed, write `wrangler login` in your terminal. You need to login to your Cloudflare account. After that, type `wrangler deploy`.
+
+
 
 ## Report Issues
 If you want to report an error/issue, create a new issue in this repository.
