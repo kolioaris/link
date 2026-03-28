@@ -1,9 +1,7 @@
 "use client"
 
-import { useSearchParams } from "next/navigation"
-
 export default function Page() {
-  const params = useSearchParams()
+  const params = new URLSearchParams(window.location.search)
   const discord = params.get("discord")
   const github = params.get("github")
   const isContributor = params.get("contributor") === "true"
@@ -16,24 +14,19 @@ export default function Page() {
         </h1>
         {isContributor ? (
           <p className="mt-2 text-center">
-            Linked accounts succesfully! As a contributor you&apos;ve earned the{" "}
-            <strong>Contributor</strong> role!
+            Linked accounts successfully! As a contributor you&apos;ve earned
+            the <strong>Contributor</strong> role!
           </p>
         ) : (
           <p className="mt-2 text-center">
-            Linked accounts succesfully! You&apos;ll automatically receive the{" "}
+            Linked accounts successfully! You&apos;ll automatically receive the{" "}
             <strong>Contributor</strong> role once you contribute to one of
             kolioaris&apos;s repos.
           </p>
         )}
         <p className="mt-2 text-center text-muted-foreground">
           <strong>Discord:</strong> {discord} <br />
-          <strong>GitHub:</strong> {github} <br />
-          <br />
-          <br />
-          <span className="text-xs">
-            btw you can press <kbd>d</kbd> to switch dark mode
-          </span>
+          <strong>GitHub:</strong> {github}
         </p>
       </div>
     </div>
