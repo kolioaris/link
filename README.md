@@ -69,8 +69,8 @@ binding = ""
 id = ""
 
 [[routes]]
-pattern = "link-api.kolioaris.xyz/*"
-zone_name = "kolioaris.xyz"
+pattern = ""
+zone_name = ""
 
 [triggers]
 crons = ["*/30 * * * *"]
