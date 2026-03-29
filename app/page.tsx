@@ -17,7 +17,7 @@ export default function Page() {
           href="https://link-api.kolioaris.xyz/auth/discord"
           className="h-12 w-1/2 text-xl"
         >
-          <Button className="h-12 w-full text-xl">Start Linking</Button>
+          <Button className="h-12 w-full text-xl hover:cursor-pointer">Start Linking</Button>
         </a>
       </div>
     </div>
